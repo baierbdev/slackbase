@@ -5,13 +5,10 @@ public class AnalisadorLexico {
 	 * recebidas apartir da entrada
 	 */
 
-	public static void analisadorDeRotinas(String[] rotina){
-		for(String s : rotina){
-			System.out.println(s);
-		}
+	public static void analisadorDeRotinas(String[] rotina) throws Exception {
 
-		// primeiroComando(rotina[0]);
-		// segundoComando(rotina[1]);
+		 primeiroComando(rotina[0]);
+		 segundoComando(rotina[1]);
 
 
 	}
@@ -32,13 +29,23 @@ public class AnalisadorLexico {
 
 	}
 
-	public static void segundoComando(String database){
+	public static void segundoComando(String cmd){
 		/* Analisa a o segundo parâmetro passado se está
 		 * de acordo com o funcionamento normal da aplicação
 		 */
+		String[] acoes = {"database", "table", "help"};
+		boolean encontrado = false;
+		for(String acao : acoes){
+			if(acao.equals(cmd)){
+				System.out.println("Chegou no segundo comando");
+				encontrado = true;
+				break;
+			}
 
-		if(database.equals("database")){
-
+			if(!encontrado){
+				System.out.println("Comando inválido no segundo comando");
+				break;
+			}
 		}
 
 
