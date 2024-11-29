@@ -13,8 +13,11 @@ public class SistemaOperacional {
 	public static String pathLinux(){
 		return "";
 	}
-	public static String pathDeConfigWindows(){
+	public static String criaPathDeConfigWindows(String path){
 		return "";
+	}
+	public static String criaPathDeConfigLinux(String path){
+		return path+"/.slackbase";
 	}
 }
 
