@@ -9,7 +9,7 @@ public class App {
             System.out.printf("> ");
             String entrada  = scanner.nextLine();
 	    if (entrada.equals("exit")){
-		    System.out.println("Bye! ");
+		    System.out.println("Bye!! ");
 		    scanner.close();
 		    break;
 	    }
