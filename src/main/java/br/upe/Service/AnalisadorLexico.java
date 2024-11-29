@@ -15,23 +15,17 @@ public class AnalisadorLexico {
 
 
 	}
-
 	public static void primeiroComando(String cmd) throws Exception {
-		// Analisa o primeiro parâmetro passado pela linha de comando
-
-		// Parâmetros permitidos
 		String[] acoes = {"create", "delete", "update", "read", "describe", "help", "info"};
-		
-		try {
-
-			for(String acao : acoes){
-				if(!acao.equals(cmd)){
-					continue;
-				} else{
-					throw new Exception();
-				}
+		boolean encontrado = false;
+		for(String acao : acoes){
+			if(acao.equals(cmd)){
+				encontrado = true;
+				break;
 			}
-		} catch (Exception e){
+		}
+
+		if(!encontrado){
 			System.out.println("Comando inválido");
 		}
 
