@@ -1,8 +1,6 @@
 package br.upe;
 import java.util.Scanner;
 
-import static br.upe.service.StringManipulador.quebrarString;
-
 public class App {
 
     public static void main(String[] args) {
@@ -16,8 +14,9 @@ public class App {
                 scanner.close();
                 break;
             }
-        }    // TODO: Fazer o método receberEntrada(entrada);
-//            receberEntrada(entrada);
+        }    
+	// TODO: Fazer o método receberEntrada(entrada);
+	// receberEntrada(entrada);
 
 
 
