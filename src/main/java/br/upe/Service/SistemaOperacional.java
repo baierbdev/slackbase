@@ -7,5 +7,14 @@ public class SistemaOperacional {
 	public static String pegaSistema(){
 		return System.getProperty("os.name");
 	}
+	public static String pathWindows(){
+		return "";
+	}
+	public static String pathLinux(){
+		return "";
+	}
+	public static String pathDeConfigWindows(){
+		return "";
+	}
 }
 

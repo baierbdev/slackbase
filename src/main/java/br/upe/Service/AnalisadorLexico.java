@@ -17,7 +17,11 @@ public class AnalisadorLexico {
 	}
 
 	public static void primeiroComando(String cmd) throws Exception {
+		// Analisa o primeiro parâmetro passado pela linha de comando
+
+		// Parâmetros permitidos
 		String[] acoes = {"create", "delete", "update", "read", "describe", "help", "info"};
+		
 		try {
 
 			for(String acao : acoes){
@@ -35,6 +39,10 @@ public class AnalisadorLexico {
 	}
 
 	public static void segundoComando(String database){
+		/* Analisa a o segundo parâmetro passado se está
+		 * de acordo com o funcionamento normal da aplicação
+		 */
+
 		if(database.equals("database")){
 
 		}
