@@ -16,10 +16,17 @@ public class SistemaOperacional {
 
 	}
 	public static String pathWindows(){
+<<<<<<< HEAD
 		return System.getProperty("user.dir\\Downloads\\slackbase");
 	}
 	public static String pathLinux(){
 		return System.getProperty("user.dir/.slackbase");
+=======
+		return System.getProperty("user.dir");
+	}
+	public static String pathLinux(){
+		return System.getProperty("user.dir");
+>>>>>>> d0ca6ca (Implementando algumas funções na classe SistemaOperacional)
 	}
 	public static String criaPathDeConfigWindows(String path){
 		// TODO: Criar path no Windows
