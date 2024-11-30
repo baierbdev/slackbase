@@ -1,5 +1,9 @@
-package br.upe.Service;
+package br.upe.SO;
 public class AcessoDefinitivo {
+	// TODO: Método para abrir um arquivo
+	// TODO: Método para instaciar um database na mémoria
+
+
 	public void criarDatabase(){
 		// TODO: Implementar
 		/* Método utilizado para criar uma nova database */
@@ -10,5 +14,6 @@ public class AcessoDefinitivo {
 		*/
 		// TODO: Implementar
 	}
+	
 	
 }

@@ -7,12 +7,15 @@ public class AnalisadorLexico {
 
 	public static void analisadorDeRotinas(String[] rotina) throws Exception {
 
-		 primeiroComando(rotina[0]);
-		 segundoComando(rotina[1]);
+		verificaPrimeiraInstrucao(rotina[0]);
+		verificaArgumento(rotina[1]);
 
 
 	}
-	public static void primeiroComando(String cmd) throws Exception {
+	public static void verificaPrimeiraInstrucao(String cmd) {
+		/* Método que analisa se o primeiro parâmetro está de acordo
+		 * com o fluxo de execução comum.
+		 */
 		String[] acoes = {"create", "delete", "update", "read", "describe", "help", "info"};
 		boolean encontrado = false;
 		for(String acao : acoes){
@@ -29,21 +32,21 @@ public class AnalisadorLexico {
 
 	}
 
-	public static void segundoComando(String cmd){
+	public static void verificaArgumento(String cmd){
 		/* Analisa a o segundo parâmetro passado se está
-		 * de acordo com o funcionamento normal da aplicação
+		 * de acordo com o funcionamento normal da aplicação.
 		 */
-		String[] acoes = {"database", "table", "help"};
+		String[] acoes = {"database", "help"};
 		boolean encontrado = false;
 		for(String acao : acoes){
 			if(acao.equals(cmd)){
-				System.out.println("Chegou no segundo comando");
 				encontrado = true;
 				break;
 			}
 
-			if(!encontrado){
-				System.out.println("Comando inválido no segundo comando");
+		if(!encontrado){
+			System.out.printf("O %s não é válido como argumento\n",cmd);
+			System.out.println("Digite o comando + help para ver a lista de argumentos válidos");
 				break;
 			}
 		}
