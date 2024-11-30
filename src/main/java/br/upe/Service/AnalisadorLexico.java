@@ -16,7 +16,7 @@ public class AnalisadorLexico {
 		/* Método que analisa se o primeiro parâmetro está de acordo
 		 * com o fluxo de execução comum.
 		 */
-		String[] acoes = {"create", "delete", "update", "read", "describe", "help", "info"};
+		String[] acoes = {"create", "delete", "update", "read", "describe", "help", "info", "show"};
 		boolean encontrado = false;
 		for(String acao : acoes){
 			if(acao.equals(cmd)){

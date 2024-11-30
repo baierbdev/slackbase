@@ -4,7 +4,7 @@ public class AcessoEmMemoria {
 	// TODO: Método para instaciar um database na mémoria
 
 
-	public void criarDatabase(){
+	public void criarDatabase(String databaseNome){
 		// TODO: Implementar
 		/* Método utilizado para criar uma nova database */
 	}
@@ -14,10 +14,16 @@ public class AcessoEmMemoria {
 		*/
 		// TODO: Implementar
 	}
-	public static boolean verificadorDeDatabase(String nome){
+	public boolean verificadorDeDatabase(String nome){
 		// TODO: Implementar a função
 		/* Método que verifica se o database existe */
 		return false;
 	}
-	
+	public void imprimeCabecalho(String nomeDoDatabase){
+		// TODO: Implementa a função
+
+	} 
+	public void imprimeGravacoes(String nomeDoDatabase) {
+		// TODO: Implementar a função
+	}
 }
