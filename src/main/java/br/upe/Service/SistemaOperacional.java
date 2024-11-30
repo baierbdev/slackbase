@@ -21,9 +21,6 @@ public class SistemaOperacional {
 	public static String pathLinux(){
 		return System.getProperty("user.dir/.slackbase");
 	}
-	public static String pathLinux(){
-		return System.getProperty("user.dir");
-	}
 	public static String criaPathDeConfigWindows(String path){
 		// TODO: Criar path no Windows
 		return "";
