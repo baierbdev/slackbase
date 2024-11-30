@@ -1,35 +1,41 @@
 package br.upe.SO;
 
+import java.io.File;
+
+
 public class SistemaOperacional {
 	/* Classe responśavel pela portabilidade do sistema, tendo como
 	 * foco o Linux e Windows.
 	 */
 
-	public static void setaSistemaConfig(){
-		String sistema = System.getProperty("os.name");
-		switch ( sistema ){
-			case "Linux":
-				criaPathDeConfigLinux(pathLinux());
-			default:
-				criaPathDeConfigWindows(pathWindows());
+	public void setaSistemaConfig(){
+		String sistema = System.getProperty("os.name").toLowerCase();
+		if (sistema.contains("linux")) {
+			criaPathDeConfigLinux(pathLinux());
+		} else {
+			criaPathDeConfigWindows(pathWindows());
 		}
 
 	}
-	public static String pathWindows(){
+	public String pathWindows(){
 		// Método usado para setar o path principal da aplicação
-		return System.getProperty("user.dir\\Downloads\\slackbase");
+		return System.getProperty("user.dir") +"\\Downloads\\slackbase";
 	}
-	public static String pathLinux(){
+	public String pathLinux(){
 		// Método usado para setar o path principal da aplicação
-		return System.getProperty("user.dir/.slackbase");
+		return System.getProperty("user.dir") +"/.slackbase";
 	}
-	public static String criaPathDeConfigWindows(String path){
-		// TODO: Criar path no Windows
-		return "";
+	public void criaPathDeConfigWindows(String path){
+		File pathWindows = new File(path);
+		if ( !pathWindows.exists() ){
+			pathWindows.mkdirs();
+		}	
 	}
-	public static String criaPathDeConfigLinux(String path){
-		// TODO: Criar path no linux path+"/.slackbase";
-		return "";
+	public void criaPathDeConfigLinux(String path){
+		File pathLinux = new File(path);
+		if (!pathLinux.exists()){
+			pathLinux.mkdirs();
+		}
 	}
 	
 }

@@ -7,8 +7,8 @@ import java.util.Scanner;
 public class App {
 
 	public static void main(String[] args) throws Exception {
-		// TODO: Fazer a checagem do sistema operacional 
-		SistemaOperacional.setaSistemaConfig();
+		SistemaOperacional sistemaOperacional = new SistemaOperacional();
+		sistemaOperacional.setaSistemaConfig();
 		try{
 			Scanner scanner = new Scanner(System.in);
 			while( true ) {

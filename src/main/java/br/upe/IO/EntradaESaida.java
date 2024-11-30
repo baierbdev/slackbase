@@ -2,7 +2,6 @@ package br.upe.IO;
 
 import br.upe.Service.StringManipulador;
 
-import static br.upe.Service.StringManipulador.quebrarString;
 
 public class EntradaESaida {
     public static void receberEntrada(String entrada ) throws Exception {
