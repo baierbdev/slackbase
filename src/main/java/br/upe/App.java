@@ -1,9 +1,11 @@
 package br.upe;
+import br.upe.IO.EntradaESaida;
+
 import java.util.Scanner;
 
 public class App {
 
-    public static void main(String[] args) {
+    public static void main(String[] args) throws Exception {
         // TODO: Fazer a checagem do sistema operacional 
 	Scanner scanner = new Scanner(System.in);
         while( true ) {
@@ -14,9 +16,10 @@ public class App {
                 scanner.close();
                 break;
             }
-        }    
-	// TODO: Fazer o método receberEntrada(entrada);
-	// receberEntrada(entrada);
+
+            EntradaESaida.receberEntrada(entrada);
+
+        }
 
 
 
