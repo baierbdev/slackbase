@@ -31,10 +31,6 @@ public class SistemaOperacional {
 		// TODO: Criar path no linux path+"/.slackbase";
 		return "";
 	}
-	public static boolean verificadorDeDatabase(String nome){
-		// TODO: Implementar a função
-		/* Método que verifica se o database existe */
-		return false;
-	}
+	
 }
 

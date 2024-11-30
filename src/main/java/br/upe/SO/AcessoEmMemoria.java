@@ -1,5 +1,5 @@
 package br.upe.SO;
-public class AcessoDefinitivo {
+public class AcessoEmMemoria {
 	// TODO: Método para abrir um arquivo
 	// TODO: Método para instaciar um database na mémoria
 
@@ -14,6 +14,10 @@ public class AcessoDefinitivo {
 		*/
 		// TODO: Implementar
 	}
-	
+	public static boolean verificadorDeDatabase(String nome){
+		// TODO: Implementar a função
+		/* Método que verifica se o database existe */
+		return false;
+	}
 	
 }
