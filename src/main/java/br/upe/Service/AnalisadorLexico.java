@@ -16,7 +16,7 @@ public class AnalisadorLexico {
 		/* Método que analisa se o primeiro parâmetro está de acordo
 		 * com o fluxo de execução comum.
 		 */
-		String[] acoes = {"create", "delete", "read", "describe", "help", "info", "show"};
+		String[] acoes = {"create", "delete", "read", "describe", "help", "info"};
 		boolean encontrado = false;
 		for(String acao : acoes){
 			if(acao.equals(cmd)){
@@ -26,7 +26,7 @@ public class AnalisadorLexico {
 		}
 
 		if(!encontrado){
-			System.out.println("Comando inválido");
+			System.out.println("Não houve nenhuma entrada!");
 		}
 
 

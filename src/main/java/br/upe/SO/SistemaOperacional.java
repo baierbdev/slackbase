@@ -10,18 +10,25 @@ public class SistemaOperacional {
 
 	public void setaSistemaConfig(){
 		String sistema = System.getProperty("os.name").toLowerCase();
-		if (sistema.contains("linux")) {
+		if ( sistema.contains("linux") ) {
 			criaPathDeConfigLinux(pathLinux());
 		} else {
 			criaPathDeConfigWindows(pathWindows());
 		}
 
 	}
-	public String pathWindows(){
+	public static String systemReturnPath(){
+		if ( System.getProperty("os.name").toLowerCase() == "linux" ){
+			return pathLinux();
+		}else{
+			return pathWindows();
+		}
+	}
+	public static String pathWindows(){
 		// Método usado para setar o path principal da aplicação
 		return System.getProperty("user.dir") +"\\Downloads\\slackbase";
 	}
-	public String pathLinux(){
+	public static String pathLinux(){
 		// Método usado para setar o path principal da aplicação
 		return System.getProperty("user.dir") +"/.slackbase";
 	}
