@@ -8,6 +8,6 @@ public class EntradaESaida {
 	/* Método que tem como função enviara entrada 
 	 * para as classes de serviços
 	 */
-        StringManipulador.quebrarString(entrada);
+        StringManipulador.quebrarStringEspaco(entrada);
     }
 }
