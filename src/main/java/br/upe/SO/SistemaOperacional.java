@@ -30,7 +30,7 @@ public class SistemaOperacional {
 	}
 	public static String pathLinux(){
 		// Método usado para setar o path principal da aplicação
-		return System.getProperty("user.dir") +"/.slackbase";
+		return System.getProperty("user.dir") +"/Downloads/slackbase";
 	}
 	public void criaPathDeConfigWindows(String path){
 		File pathWindows = new File(path);
