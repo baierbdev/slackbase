@@ -3,9 +3,11 @@ package br.upe.Service;
 
 public class StringManipulador {
     public static String[] quebrarStringEspaco(String string) throws Exception {
+        AnalisadorLexico analisadorLexico = new AnalisadorLexico();
+
         String regex = " (?=(?:[^']*'[^']*')*[^']*$)(?=(?:[^()]*\\([^()]*\\))*[^()]*$)";
         String[] strArr = string.split(regex);
-        AnalisadorLexico.analisadorDeRotinas(strArr);
+        analisadorLexico.analisadorDeRotinas(strArr);
         quebrarParametro3(strArr[3]);
 
         return strArr;
