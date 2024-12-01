@@ -1,14 +1,18 @@
 package br.upe.Service;
 
+import br.upe.SO.AcessoEmMemoria;
+
 public class AnalisadorLexico {
 	/* Classe resposável pela analise lexica das rotinas
 	 * recebidas apartir da entrada
 	 */
 
 	public static void analisadorDeRotinas(String[] rotina) throws Exception {
-
+		AcessoEmMemoria acessoEmMemoria = new AcessoEmMemoria();
 		verificaPrimeiraInstrucao(rotina[0]);
 		verificaArgumento(rotina[1]);
+		String[] param3 = StringManipulador.quebrarParametro3(rotina[3]);
+		acessoEmMemoria.criarDatabase(rotina[2], param3);
 
 
 	}
