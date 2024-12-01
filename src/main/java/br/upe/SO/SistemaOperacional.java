@@ -18,7 +18,7 @@ public class SistemaOperacional {
 
 	}
 	public static String systemReturnPath(){
-		if ( System.getProperty("os.name").toLowerCase() == "linux" ){
+		if ( System.getProperty("os.name").toLowerCase().equals("linux") ){
 			return pathLinux();
 		}else{
 			return pathWindows();
