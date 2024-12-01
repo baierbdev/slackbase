@@ -25,9 +25,9 @@ public class AnalisadorLexico {
 			}
 		}
 
-		if(!encontrado){
-			System.out.println("Não houve nenhuma entrada!");
-		}
+//		if(!encontrado){
+//			System.out.println("Não houve nenhuma entrada!");
+//		}
 
 
 	}
@@ -38,17 +38,16 @@ public class AnalisadorLexico {
 		 */
 		String[] acoes = {"database", "help"};
 		boolean encontrado = false;
-		for(String acao : acoes){
-			if(acao.equals(cmd)){
+		for(String acao : acoes) {
+			if (acao.equals(cmd)) {
 				encontrado = true;
 				break;
 			}
+		}
 
 		if(!encontrado){
 			System.out.printf("O %s não é válido como argumento\n",cmd);
 			System.out.println("Digite o comando + help para ver a lista de argumentos válidos");
-				break;
-			}
 		}
 
 

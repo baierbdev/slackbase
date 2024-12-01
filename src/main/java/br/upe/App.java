@@ -26,7 +26,8 @@ public class App {
 		} catch (NoSuchElementException e){
 			System.out.println("Não há nenhuma entrada");
 		} catch (ArrayIndexOutOfBoundsException e){
-			System.out.println("Não há nenhuma entrada");
+			System.out.println("Não há nenhuma entrada ou não corresponde ao fluxo primário");
+			System.out.println("Digite 'help' para mais informações");
 		}
 
 
