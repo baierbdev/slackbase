@@ -2,8 +2,10 @@ package br.upe.SO;
 import java.io.File;
 import java.io.IOException;
 import java.io.Writer;
+import java.io.Reader;
 import java.nio.file.Files;
 import java.nio.file.Paths;
+import java.util.*;
 
 import com.opencsv.*;
 
@@ -14,33 +16,65 @@ public class AcessoEmMemoria {
 		String path  = SistemaOperacional.systemReturnPath()+nome+".csv";
 		File database = new File(path);
 		try (Writer writer = Files.newBufferedWriter(Paths.get(path));
-                 CSVWriter csvWriter = new CSVWriter(writer)) {
+				CSVWriter csvWriter = new CSVWriter(writer)) {
 			if ( database.createNewFile()  ){
-			System.out.println("Arquivo criado!");
+				System.out.println("Arquivo criado!");
 			}
-				csvWriter.writeNext(cabecalho);
+			csvWriter.writeNext(cabecalho);
 
 		}catch (IOException e){
 			System.out.println("Banco de dados, já existe!");
 		}
-	
+
 	}
 	public void databaseAcesso(String[] database){
 		/* Esse método pega o nome do database do o array e entra nele
-		* Usa o try para acessar e o finally para fechar o arquivo
-		*/
+		 * Usa o try para acessar e o finally para fechar o arquivo
+		 */
 		// TODO: Implementar
 	}
-	public boolean verificadorDeDatabase(String nome){
-		// TODO: Implementar a função
+
+	public boolean verificadorDeDatabase(String nomeDoDatabase){
 		/* Método que verifica se o database existe */
-		return false;
+		String path  = SistemaOperacional.systemReturnPath()+nomeDoDatabase+".csv";
+		File database = new File(path);
+		if ( !database.exists() ){
+			return false;
+		}else{
+			return true;
+		}
 	}
 	public void imprimeCabecalho(String nomeDoDatabase){
-		// TODO: Implementa a função
-
-	} 
-	public void imprimeGravacoes(String nomeDoDatabase) {
-		// TODO: Implementar a função
+		String path  = SistemaOperacional.systemReturnPath()+nomeDoDatabase+".csv";
+		try ( Reader reader = Files.newBufferedReader(Paths.get(path));
+				CSVReader csvReader = new CSVReaderBuilder(reader).withSkipLines(1).build() ){
+			List<String[]> gravacao = csvReader.readAll();
+			if (!gravacao.isEmpty()){
+				String[] cabecalho = gravacao.get(0);
+				for (String cabecalhoImprime : cabecalho){
+					System.out.printf("| %s | ",cabecalhoImprime);
+				}
+			}
+		}catch (IOException e){
+		System.out.println("Database específicado não existe!");
+		}
 	}
+
+ 
+	public void imprimeGravacoes(String nomeDoDatabase) {
+		String path  = SistemaOperacional.systemReturnPath()+nomeDoDatabase+".csv";
+
+		try ( Reader reader = Files.newBufferedReader(Paths.get(path));
+			CSVReader csvReader = new CSVReaderBuilder(reader).withSkipLines(1).build() ){
+
+			List<String[]> gravacao = csvReader.readAll();
+			for (String[] linhaGravada : gravacao){
+				for (String printLinha : linhaGravada ){
+					System.out.println(printLinha);
+				}
+			}
+		}catch (IOException e){
+		System.out.println("Database específicado não existe!");
+	}
+}
 }
