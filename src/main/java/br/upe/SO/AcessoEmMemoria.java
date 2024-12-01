@@ -28,10 +28,10 @@ public class AcessoEmMemoria {
 
 	}
 	public void databaseAcesso(String[] database){
-		/* Esse método pega o nome do database do o array e entra nele
-		 * Usa o try para acessar e o finally para fechar o arquivo
+		/* Esse método pega o nome do databas entra nele e
+		 * faz o update do banco de dados
 		 */
-		// TODO: Implementar
+		
 	}
 
 	public boolean verificadorDeDatabase(String nomeDoDatabase){

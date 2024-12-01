@@ -26,11 +26,11 @@ public class SistemaOperacional {
 	}
 	public static String pathWindows(){
 		// Método usado para setar o path principal da aplicação
-		return System.getProperty("user.dir") +"\\Downloads\\slackbase";
+		return System.getProperty("user.home") +"\\Downloads\\slackbase";
 	}
 	public static String pathLinux(){
 		// Método usado para setar o path principal da aplicação
-		return System.getProperty("user.dir") +"/Downloads/slackbase";
+		return System.getProperty("user.home") +"/Downloads/slackbase";
 	}
 	public void criaPathDeConfigWindows(String path){
 		File pathWindows = new File(path);

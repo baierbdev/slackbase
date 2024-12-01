@@ -1,26 +1,33 @@
 package br.upe.Service;
 
+import java.io.IOException;
+
 import br.upe.SO.AcessoEmMemoria;
 
 public class AnalisadorLexico {
 	/* Classe resposável pela analise lexica das rotinas
 	 * recebidas apartir da entrada
 	 */
+	AcessoEmMemoria acessoEmMemoria;
 
-	public static void analisadorDeRotinas(String[] rotina) throws Exception {
-		AcessoEmMemoria acessoEmMemoria = new AcessoEmMemoria();
-		verificaPrimeiraInstrucao(rotina[0]);
-		verificaArgumento(rotina[1]);
-		String[] param3 = StringManipulador.quebrarParametro3(rotina[3]);
-		acessoEmMemoria.criarDatabase(rotina[2], param3);
+	public void analisadorDeRotinas(String[] rotina) throws IOException {
+        verificaArgumento(rotina[0].toLowerCase());
+        verificaArgumento(rotina[1].toLowerCase());
+        switch (rotina[0]){
+            case "create":
+                String[] parametro = StringManipulador.quebrarParametro3(rotina[3].toLowerCase());
+                funcaoCreate(rotina[2],parametro);
+            case "update":
+
+        }
 
 
-	}
+    }
 	public static void verificaPrimeiraInstrucao(String cmd) {
 		/* Método que analisa se o primeiro parâmetro está de acordo
 		 * com o fluxo de execução comum.
 		 */
-		String[] acoes = {"create", "delete", "read", "describe", "help", "info"};
+		String[] acoes = {"create", "update", "delete", "read", "describe", "help", "info"};
 		boolean encontrado = false;
 		for(String acao : acoes){
 			if(acao.equals(cmd)){
@@ -29,9 +36,9 @@ public class AnalisadorLexico {
 			}
 		}
 
-//		if(!encontrado){
-//			System.out.println("Não houve nenhuma entrada!");
-//		}
+		if(!encontrado){
+			System.out.println("Não houve nenhuma entrada!");
+		}
 
 
 	}
@@ -56,4 +63,15 @@ public class AnalisadorLexico {
 
 
 	}
+	public void funcaoCreate(String nomeDoDatabase, String[] rotina){
+		acessoEmMemoria.criarDatabase(nomeDoDatabase, rotina);	
+	}
+	public void funcaoDelete(String nomeDoDatabase){}
+	public void funcaoUpdate(String nomeDoDatabase){}
+	public void funcaoRead(String nomeDoDatabase){}
+	public void funcaoDescribe(String nomeDoDatabase){
+
+	}
+	public void funcaoHelp(String nomeDoDatabase){}
+	public void funcaoInfo(String nomeDoDatabase){}
 }
