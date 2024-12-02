@@ -14,6 +14,9 @@ public class EntradaESaida {
         stringManipulador = new StringManipulador();
         analisadorLexico = new AnalisadorLexico();
         String[] string = stringManipulador.quebrarStringEspaco(entrada);
-        stringManipulador.quebrarParametro3(string[3]);
+        if(string.length > 3){
+            stringManipulador.quebrarParametro3(string[3]);
+        }
+
     }
 }
