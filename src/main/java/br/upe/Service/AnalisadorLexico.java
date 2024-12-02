@@ -12,16 +12,34 @@ public class AnalisadorLexico {
 	StringManipulador stringManipulador= new StringManipulador();
 
 	public void analisadorDeRotinas(String[] rotina) throws IOException {
-        verificaPrimeiraInstrucao(rotina[0].toLowerCase());
-        verificaArgumento(rotina[1].toLowerCase());
+		String[] parametro = stringManipulador.quebrarParametro3(rotina[3].toLowerCase());
         switch (rotina[0]){
             case "create":
-                String[] parametro = stringManipulador.quebrarParametro3(rotina[3].toLowerCase());
                 funcaoCreate(rotina[2], parametro);
                 break;
             case "update":
+				funcaoUpdate(rotina[2],parametro);
 				break;
-        }
+			case "delete":
+				funcaoDelete(rotina[2]);
+				break;
+			case "read":
+				funcaoRead(rotina[2]);
+				break;
+			case "describe":
+				funcaoDescribe(rotina[2]);
+				break;
+			case "help":
+				funcaoHelpComandos();
+				break;
+			case "info":
+				funcaoInfo();
+				break;
+			default:
+				verificaPrimeiraInstrucao(rotina[0].toLowerCase());
+				verificaArgumento(rotina[1].toLowerCase());
+				break;
+		}
 
 
     }
@@ -72,18 +90,24 @@ public class AnalisadorLexico {
 		acessoEmMemoria.criarDatabase(nomeDoDatabase, rotina);	
 	}
 	public void funcaoDelete(String nomeDoDatabase){
+
 		acessoEmMemoria.deletaDatabase(nomeDoDatabase);
 	}
 	public void funcaoUpdate(String nomeDoDatabase, String[] dadosParaGravar){
 		acessoEmMemoria.databaseAcesso(dadosParaGravar,nomeDoDatabase);
 	}
 	public void funcaoRead(String nomeDoDatabase){
+
 		acessoEmMemoria.imprimeGravacoes(nomeDoDatabase);
 	}
 	public void funcaoDescribe(String nomeDoDatabase){
+
 		acessoEmMemoria.imprimeCabecalho(nomeDoDatabase);
 	}
 	public void funcaoInfo(){
+
+	}
+	public void funcaoHelpComandos(){
 
 	}
 
