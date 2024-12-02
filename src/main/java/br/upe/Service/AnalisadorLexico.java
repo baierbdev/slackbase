@@ -12,7 +12,12 @@ public class AnalisadorLexico {
 	StringManipulador stringManipulador= new StringManipulador();
 
 	public void analisadorDeRotinas(String[] rotina) throws IOException {
-		String[] parametro = stringManipulador.quebrarParametro3(rotina[3].toLowerCase());
+		String[] parametro = null;
+		if(rotina.length > 3){
+			parametro = stringManipulador.quebrarParametro3(rotina[3].toLowerCase());
+		}
+
+
         switch (rotina[0]) {
             case "create" -> funcaoCreate(rotina[2], parametro);
             case "update" -> funcaoUpdate(rotina[2], parametro);
@@ -76,7 +81,6 @@ public class AnalisadorLexico {
 		acessoEmMemoria.criarDatabase(nomeDoDatabase, rotina);	
 	}
 	public void funcaoDelete(String nomeDoDatabase){
-
 		acessoEmMemoria.deletaDatabase(nomeDoDatabase);
 	}
 	public void funcaoUpdate(String nomeDoDatabase, String[] dadosParaGravar){
