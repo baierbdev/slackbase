@@ -28,7 +28,7 @@ public class App {
 			System.out.println("Não há nenhuma entrada");
 		} catch (ArrayIndexOutOfBoundsException e){
 			System.out.println("Não há nenhuma entrada ou não corresponde ao fluxo primário");
-			System.out.println("Digite 'help' para mais informações");
+			System.out.println("Digite 'help <nome do comando>' para mais informações");
 		}
 
 
