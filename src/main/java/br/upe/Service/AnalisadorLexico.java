@@ -13,24 +13,19 @@ public class AnalisadorLexico {
 
 	public void analisadorDeRotinas(String[] rotina) throws IOException {
 		String[] parametro = stringManipulador.quebrarParametro3(rotina[3].toLowerCase());
-		if (rotina[0].equals("create")) {
-			funcaoCreate(rotina[2], parametro);
-		} else if (rotina[0].equals("update")) {
-			funcaoUpdate(rotina[2], parametro);
-		} else if (rotina[0].equals("delete")) {
-			funcaoDelete(rotina[2]);
-		} else if (rotina[0].equals("read")) {
-			funcaoRead(rotina[2]);
-		} else if (rotina[0].equals("describe")) {
-			funcaoDescribe(rotina[2]);
-		} else if (rotina[0].equals("help")) {
-			funcaoHelpComandos();
-		} else if (rotina[0].equals("info")) {
-			funcaoInfo();
-		} else {
-			verificaPrimeiraInstrucao(rotina[0].toLowerCase());
-			verificaArgumento(rotina[1].toLowerCase());
-		}
+        switch (rotina[0]) {
+            case "create" -> funcaoCreate(rotina[2], parametro);
+            case "update" -> funcaoUpdate(rotina[2], parametro);
+            case "delete" -> funcaoDelete(rotina[2]);
+            case "read" -> funcaoRead(rotina[2]);
+            case "describe" -> funcaoDescribe(rotina[2]);
+            case "help" -> funcaoHelpComandos();
+            case "info" -> funcaoInfo();
+            default -> {
+                verificaPrimeiraInstrucao(rotina[0].toLowerCase());
+                verificaArgumento(rotina[1].toLowerCase());
+            }
+        }
 
 
     }

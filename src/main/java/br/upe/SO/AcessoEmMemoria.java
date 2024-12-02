@@ -15,7 +15,6 @@ public class AcessoEmMemoria {
 		/* Método utilizado para criar uma nova database */
 		String path  = SistemaOperacional.systemReturnPath()+nome+".csv";
 		File database = new File(path);
-		System.out.println("chegou");
 		try (Writer writer = Files.newBufferedWriter(Paths.get(path));
 				CSVWriter csvWriter = new CSVWriter(writer)) {
 			if ( database.createNewFile()  ){
