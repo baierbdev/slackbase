@@ -8,7 +8,8 @@ public class StringManipulador {
         String regex = " (?=(?:[^']*'[^']*')*[^']*$)(?=(?:[^()]*\\([^()]*\\))*[^()]*$)";
         String[] strArr = string.split(regex);
         analisadorLexico.analisadorDeRotinas(strArr);
-        quebrarParametro3(strArr[3]);
+        if (strArr.length > 2){
+            quebrarParametro3(strArr[3]);}
         return strArr;
 
     }
