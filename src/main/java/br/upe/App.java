@@ -8,11 +8,12 @@ public class App {
 
 	public static void main(String[] args) throws Exception {
 		SistemaOperacional sistemaOperacional = new SistemaOperacional();
+		EntradaESaida entradaESaida = new EntradaESaida();
 		sistemaOperacional.setaSistemaConfig();
 		try{
 			Scanner scanner = new Scanner(System.in);
 			while( true ) {
-				System.out.printf("> ");
+				System.out.print("> ");
 				String entrada = scanner.nextLine();
 				if (entrada.equals("exit")) {
 					System.out.println("Bye!! ");
@@ -20,7 +21,7 @@ public class App {
 					break;
 				}
 
-				EntradaESaida.receberEntrada(entrada);
+				entradaESaida.receberEntrada(entrada);
 
 			}
 		} catch (NoSuchElementException e){

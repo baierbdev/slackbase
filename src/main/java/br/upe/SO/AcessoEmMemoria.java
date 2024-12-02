@@ -27,22 +27,27 @@ public class AcessoEmMemoria {
 		}
 
 	}
-	public void databaseAcesso(String[] database){
-		/* Esse método pega o nome do databas entra nele e
+	public void databaseAcesso(String[] database, String nomeDoDatabase){
+		/* Esse método pega o nome do database entra nele e
 		 * faz o update do banco de dados
 		 */
-		
+		List<String[]> linhas = new ArrayList<>();
+		linhas.add(database);
+		String path  = SistemaOperacional.systemReturnPath()+nomeDoDatabase+".csv";
+		try (Writer writer = Files.newBufferedWriter(Paths.get(path));
+			 CSVWriter csvWriter = new CSVWriter(writer)) {
+				csvWriter.writeAll(linhas);
+
+		} catch (IOException e) {
+			System.out.println("Falha ao gravar no database!");
+		}
 	}
 
 	public boolean verificadorDeDatabase(String nomeDoDatabase){
-		/* Método que verifica se o database existe */
+		//  Método que verifica se o database existe
 		String path  = SistemaOperacional.systemReturnPath()+nomeDoDatabase+".csv";
 		File database = new File(path);
-		if ( !database.exists() ){
-			return false;
-		}else{
-			return true;
-		}
+        return database.exists();
 	}
 	public void imprimeCabecalho(String nomeDoDatabase){
 		String path  = SistemaOperacional.systemReturnPath()+nomeDoDatabase+".csv";
@@ -51,6 +56,7 @@ public class AcessoEmMemoria {
 			List<String[]> gravacao = csvReader.readAll();
 			if (!gravacao.isEmpty()){
 				String[] cabecalho = gravacao.get(0);
+				System.out.println("Esses é o arquivo de cabeçalho!");
 				for (String cabecalhoImprime : cabecalho){
 					System.out.printf("| %s | ",cabecalhoImprime);
 				}
@@ -75,6 +81,20 @@ public class AcessoEmMemoria {
 			}
 		}catch (IOException e){
 		System.out.println("Database específicado não existe!");
+		}
 	}
-}
+	public void deletaDatabase(String nomeDoDatabase){
+		String path  = SistemaOperacional.systemReturnPath()+nomeDoDatabase+".csv";
+		File database = new File(path);
+		if (database.exists()) {
+			boolean excluido = database.delete();
+			if (excluido) {
+				System.out.println("Arquivo excluído com sucesso.");
+			} else {
+				System.out.println("Não foi possível excluir o arquivo.");
+			}
+		} else {
+			System.out.println("O arquivo não existe.");
+		}
+	}
 }

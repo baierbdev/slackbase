@@ -9,20 +9,29 @@ public class AnalisadorLexico {
 	 * recebidas apartir da entrada
 	 */
 	AcessoEmMemoria acessoEmMemoria;
+	StringManipulador stringManipulador;
 
 	public void analisadorDeRotinas(String[] rotina) throws IOException {
         verificaArgumento(rotina[0].toLowerCase());
         verificaArgumento(rotina[1].toLowerCase());
         switch (rotina[0]){
             case "create":
-                String[] parametro = StringManipulador.quebrarParametro3(rotina[3].toLowerCase());
-                funcaoCreate(rotina[2],parametro);
+				if (!rotina[1].equals("help")) {
+					String[] parametro = stringManipulador.quebrarParametro3(rotina[3].toLowerCase());
+					funcaoCreate(rotina[2], parametro);
+				}else{
+					funcaoHelp(rotina[0]);
+				}
+				break;
             case "update":
-
+				break;
         }
 
 
     }
+
+
+
 	public static void verificaPrimeiraInstrucao(String cmd) {
 		/* Método que analisa se o primeiro parâmetro está de acordo
 		 * com o fluxo de execução comum.
@@ -66,12 +75,44 @@ public class AnalisadorLexico {
 	public void funcaoCreate(String nomeDoDatabase, String[] rotina){
 		acessoEmMemoria.criarDatabase(nomeDoDatabase, rotina);	
 	}
-	public void funcaoDelete(String nomeDoDatabase){}
-	public void funcaoUpdate(String nomeDoDatabase){}
-	public void funcaoRead(String nomeDoDatabase){}
+	public void funcaoDelete(String nomeDoDatabase){
+		acessoEmMemoria.deletaDatabase(nomeDoDatabase);
+	}
+	public void funcaoUpdate(String nomeDoDatabase, String[] dadosParaGravar){
+		acessoEmMemoria.databaseAcesso(dadosParaGravar,nomeDoDatabase);
+	}
+	public void funcaoRead(String nomeDoDatabase){
+		acessoEmMemoria.imprimeGravacoes(nomeDoDatabase);
+	}
 	public void funcaoDescribe(String nomeDoDatabase){
+		acessoEmMemoria.imprimeCabecalho(nomeDoDatabase);
+	}
+	public void funcaoInfo(){
 
 	}
-	public void funcaoHelp(String nomeDoDatabase){}
+
+	public void funcaoHelp(String comando){
+        switch (comando){
+            case "create":
+                System.out.println("Use o comando 'create' dessa forma:");
+                System.out.println("create database <nomeDatabase> (\"nome\", \"sobrenome\")");
+                break;
+            case "delete":
+                System.out.println("Use o comando 'delete' dessa forma:");
+                System.out.println("delete database <nomeDatabase>");
+                break;
+            case "update":
+                 System.out.println("Use o comando 'update' dessa forma:");
+                 System.out.println("update database <nomeDatabase> (\"nome\", \"sobrenome\")");
+                 break;
+            case "read":
+                System.out.println("Use o comando 'update' dessa forma:");
+                System.out.println("read database <nomeDatabase>");
+                break;
+            case "describe":
+                System.out.println("Use o comando 'update' dessa forma:");
+                System.out.println("describe database <nomeDatabase>");
+        }
+	}
 	public void funcaoInfo(String nomeDoDatabase){}
 }
