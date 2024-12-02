@@ -11,6 +11,8 @@ public class EntradaESaida {
 	/* Método que tem como função enviara entrada 
 	 * para as classes de serviços
 	 */
+        stringManipulador = new StringManipulador();
+        analisadorLexico = new AnalisadorLexico();
         String[] string = stringManipulador.quebrarStringEspaco(entrada);
         stringManipulador.quebrarParametro3(string[3]);
     }

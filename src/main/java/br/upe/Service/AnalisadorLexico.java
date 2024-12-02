@@ -8,21 +8,17 @@ public class AnalisadorLexico {
 	/* Classe resposável pela analise lexica das rotinas
 	 * recebidas apartir da entrada
 	 */
-	AcessoEmMemoria acessoEmMemoria;
-	StringManipulador stringManipulador;
+	AcessoEmMemoria acessoEmMemoria = new AcessoEmMemoria();
+	StringManipulador stringManipulador= new StringManipulador();
 
 	public void analisadorDeRotinas(String[] rotina) throws IOException {
-        verificaArgumento(rotina[0].toLowerCase());
+        verificaPrimeiraInstrucao(rotina[0].toLowerCase());
         verificaArgumento(rotina[1].toLowerCase());
         switch (rotina[0]){
             case "create":
-				if (!rotina[1].equals("help")) {
-					String[] parametro = stringManipulador.quebrarParametro3(rotina[3].toLowerCase());
-					funcaoCreate(rotina[2], parametro);
-				}else{
-					funcaoHelp(rotina[0]);
-				}
-				break;
+                String[] parametro = stringManipulador.quebrarParametro3(rotina[3].toLowerCase());
+                funcaoCreate(rotina[2], parametro);
+                break;
             case "update":
 				break;
         }
