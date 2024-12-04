@@ -17,10 +17,9 @@ public class StringManipulador {
 
     public String[] quebrarParametro3(String string){
         //usar esse metodo para quebrar o parametro 3 de rotina
-        String res = string.replace("(", "").replace(")", "")
-                .replace("'", "").replace(",", "");
+        String res = string.replace("(", "").replace(")", "");
 
-
-        return res.split(" ");
+        System.out.println(res);
+        return res.split(",");
     }
 }

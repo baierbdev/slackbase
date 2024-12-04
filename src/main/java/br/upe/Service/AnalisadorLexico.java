@@ -24,7 +24,7 @@ public class AnalisadorLexico {
             case "delete" -> funcaoDelete(rotina[2]);
             case "read" -> funcaoRead(rotina[2]);
             case "describe" -> funcaoDescribe(rotina[2]);
-            case "help" -> funcaoHelpComandos();
+            case "help" -> funcaoHelp(rotina[1]);
             case "info" -> funcaoInfo();
             default -> {
                 verificaPrimeiraInstrucao(rotina[0].toLowerCase());
