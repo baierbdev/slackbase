@@ -15,7 +15,7 @@ public class AnalisadorLexico {
 	public void analisadorDeRotinas(String[] rotina) throws IOException {
 		String[] parametro = null;
 		if(rotina.length > 3){
-			parametro = stringManipulador.quebrarParametro3(rotina[3].toLowerCase());
+			parametro = stringManipulador.quebrarParametro3(rotina[3]);
 		}
 
 
@@ -27,6 +27,8 @@ public class AnalisadorLexico {
             case "describe" -> funcaoDescribe(rotina[2]);
             case "help" -> funcaoHelp(rotina[1]);
             case "info" -> funcaoInfo();
+			case "ajuda" -> funcaoAjuda();
+			case "manual" -> funcaoManual();
             default -> {
                 verificaPrimeiraInstrucao(rotina[0].toLowerCase());
                 verificaArgumento(rotina[1].toLowerCase());
@@ -109,6 +111,12 @@ public class AnalisadorLexico {
 				"para emular o funcionamento de um banco de dados.\n" +
 				"Digite help para vê os comandos básicos.");
 	}
+	public void funcaoAjuda(){
+		System.out.println();
+	}
+	public void funcaoManual(){
+		System.out.println("Consulte online em: https://github.com/baierbdev/slackbase/wiki");
+	}
 
 	public void funcaoHelp(String comando){
         switch (comando){
@@ -136,5 +144,6 @@ public class AnalisadorLexico {
 				System.out.println("Sem entrada!");
 				break;
         }
+
 	}
 }

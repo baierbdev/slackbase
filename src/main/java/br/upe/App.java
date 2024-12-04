@@ -19,7 +19,7 @@ public class App {
 			System.out.println("SlackBase DB  Ver " + version + " (" + system + ")\n");
 			System.out.println("Copyright (c) 2024, " + authors + ". All rights reserved.\n");
 			System.out.println("SlackBase é um sistema de gerenciamento de banco de dados feito utilizando arquivos CSV.\n");
-			System.out.println("Digite \"help\" para conseguir ajuda ou manual para consultar o manual online.\n");
+			System.out.println("Digite \"ajuda\" para conseguir ajuda ou manual para consultar o manual online.\n");
 			while( true ) {
 				System.out.print("SlackBase> ");
 				String entrada = scanner.nextLine();
