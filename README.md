@@ -2,6 +2,11 @@
 <h1>Slackbase</h1>
 </center>
 
+<center>
+<img src="resources/Screenshot From 2024-12-04 10-57-31.png" width="45%" style="display: inline-block; margin-right: 10px;">
+<img src="resources/Screenshot From 2024-12-04 11-26-21.png" width="45%" style="display: inline-block;">
+</center>
+
 
 ### 📕 Sobre
 Projeto de Banco de Dados com portabilidade para *Windows* e *Linux*. Este projeto foi utilizado no componente de Estrutura de dados,
