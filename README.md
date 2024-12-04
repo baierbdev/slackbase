@@ -3,8 +3,8 @@
 </div>
 
 <div align="center">
-  <img src="resources/Screenshot From 2024-12-04 10-57-31.png" width="45%" style="display: inline-block; margin-right: 10px;">
-  <img src="resources/Screenshot From 2024-12-04 11-26-21.png" width="45%" style="display: inline-block;">
+  <img src="resources/Screenshot From 2024-12-04 11-33-06.png" width="45%" style="display: inline-block; margin-right: 10px;">
+  <img src="resources/Screenshot From 2024-12-04 11-34-42.png" width="45%" style="display: inline-block;">
 </div>
 
 ### 📕 Sobre
