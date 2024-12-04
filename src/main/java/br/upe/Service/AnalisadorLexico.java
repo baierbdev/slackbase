@@ -109,7 +109,7 @@ public class AnalisadorLexico {
 				"Dessa forma, a aplicação trabalha diretamente com a manipulação desses" +
 				" dados, realizando inserções em um arquivo com um cabeçalho estabelecido\n" +
 				"para emular o funcionamento de um banco de dados.\n" +
-				"Digite help para vê os comandos básicos.");
+				"Digite ajuda para vê os comandos básicos.");
 	}
 	public void funcaoAjuda(){
 		System.out.println("\n\n******** Comandos disponíveis ********\n\n" +
