@@ -112,7 +112,23 @@ public class AnalisadorLexico {
 				"Digite help para vê os comandos básicos.");
 	}
 	public void funcaoAjuda(){
-		System.out.println();
+		System.out.println("\n\n******** Comandos disponíveis ********\n\n" +
+				"Cria um novo database\n" +
+				"create database <nome do database> (nome, sobrenome, idade)\n\n" +
+				"Insere um novo dado no database\n" +
+				"update database <nome do database> (“Pedro”, “Guilherme”, “20”)\n\n" +
+				"Deleta o database\n" +
+				"delete database <nome do database>\n\n" +
+				"Mostra as informações do banco\n" +
+				"read database <nome do database>\n\n" +
+				"Descreve as propriedades do banco\n" +
+				"describe database <nome do database>\n\n" +
+				"Mostra individualmente como usar um comando específico\n" +
+				"help <comando>\n\n" +
+				"Mostra todos os comandos disponíveis\n" +
+				"ajuda\n\n" +
+				"Informações sobre o sistema\n" +
+				"info\n");
 	}
 	public void funcaoManual(){
 		System.out.println("Consulte online em: https://github.com/baierbdev/slackbase/wiki");
