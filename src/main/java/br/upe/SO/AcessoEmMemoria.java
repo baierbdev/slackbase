@@ -1,8 +1,5 @@
 package br.upe.SO;
-import java.io.File;
-import java.io.IOException;
-import java.io.Writer;
-import java.io.Reader;
+import java.io.*;
 import java.nio.file.Files;
 import java.nio.file.Paths;
 import java.util.*;
@@ -34,7 +31,7 @@ public class AcessoEmMemoria {
 		List<String[]> linhas = new ArrayList<>();
 		linhas.add(database);
 		String path  = SistemaOperacional.systemReturnPath()+nomeDoDatabase+".csv";
-		try (Writer writer = Files.newBufferedWriter(Paths.get(path));
+		try (Writer writer = new FileWriter(path, true);
 			 CSVWriter csvWriter = new CSVWriter(writer)) {
 				csvWriter.writeNext(database);
 
