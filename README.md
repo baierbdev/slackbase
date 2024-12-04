@@ -1,5 +1,5 @@
 <center>
- <h1>Slackbase</h1>
+# Slackbase
 </center>
 
 
@@ -17,7 +17,7 @@ Para isso foi utilizado a biblioteca OpenCSV, utilizada para fazer a gerencia do
 - Mostrar o cabeçalho do aquivo CSV
 - Mostrar todas as gravações
 
-### 📌 Estrutura de Dados (tópicos):
+### 📌 Estrutura de Dados:
 - Array e listas
 
 ### 📖 Links úteis
