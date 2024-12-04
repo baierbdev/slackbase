@@ -3,6 +3,7 @@ package br.upe.Service;
 import java.io.IOException;
 
 import br.upe.SO.AcessoEmMemoria;
+import org.w3c.dom.ls.LSOutput;
 
 public class AnalisadorLexico {
 	/* Classe resposável pela analise lexica das rotinas
@@ -95,10 +96,7 @@ public class AnalisadorLexico {
 		acessoEmMemoria.imprimeCabecalho(nomeDoDatabase);
 	}
 	public void funcaoInfo(){
-
-	}
-	public void funcaoHelpComandos(){
-
+		System.out.println();
 	}
 
 	public void funcaoHelp(String comando){
@@ -116,13 +114,16 @@ public class AnalisadorLexico {
                  System.out.println("update database <nomeDatabase> (\"nome\", \"sobrenome\")");
                  break;
             case "read":
-                System.out.println("Use o comando 'update' dessa forma:");
+                System.out.println("Use o comando 'read' dessa forma:");
                 System.out.println("read database <nomeDatabase>");
                 break;
             case "describe":
-                System.out.println("Use o comando 'update' dessa forma:");
+                System.out.println("Use o comando 'describe' dessa forma:");
                 System.out.println("describe database <nomeDatabase>");
+				break;
+			default:
+				System.out.println("Sem entrada!");
+				break;
         }
 	}
-	public void funcaoInfo(String nomeDoDatabase){}
 }

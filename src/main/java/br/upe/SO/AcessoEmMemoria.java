@@ -36,7 +36,7 @@ public class AcessoEmMemoria {
 		String path  = SistemaOperacional.systemReturnPath()+nomeDoDatabase+".csv";
 		try (Writer writer = Files.newBufferedWriter(Paths.get(path));
 			 CSVWriter csvWriter = new CSVWriter(writer)) {
-				csvWriter.writeAll(linhas);
+				csvWriter.writeNext(database);
 
 		} catch (IOException e) {
 			System.out.println("Falha ao gravar no database!");
