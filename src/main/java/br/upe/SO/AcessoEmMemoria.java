@@ -28,8 +28,6 @@ public class AcessoEmMemoria {
 		/* Esse método pega o nome do database entra nele e
 		 * faz o update do banco de dados
 		 */
-		List<String[]> linhas = new ArrayList<>();
-		linhas.add(database);
 		String path  = SistemaOperacional.systemReturnPath()+nomeDoDatabase+".csv";
 		try (Writer writer = new FileWriter(path, true);
 			 CSVWriter csvWriter = new CSVWriter(writer)) {
@@ -48,16 +46,9 @@ public class AcessoEmMemoria {
 	}
 	public void imprimeCabecalho(String nomeDoDatabase){
 		String path  = SistemaOperacional.systemReturnPath()+nomeDoDatabase+".csv";
-		try ( Reader reader = Files.newBufferedReader(Paths.get(path));
-				CSVReader csvReader = new CSVReaderBuilder(reader).withSkipLines(1).build() ){
-			List<String[]> gravacao = csvReader.readAll();
-			if (!gravacao.isEmpty()){
-				String[] cabecalho = gravacao.get(0);
-				System.out.println("Esses é o arquivo de cabeçalho!");
-				for (String cabecalhoImprime : cabecalho){
-					System.out.printf("| %s | ",cabecalhoImprime);
-				}
-			}
+		try (BufferedReader br = new BufferedReader(new FileReader(path))) {
+			String linha = br.readLine();
+            System.out.println(Objects.requireNonNullElse(linha, "O arquivo está vazio."));
 		}catch (IOException e){
 		System.out.println("Database específicado não existe!");
 		}
@@ -73,8 +64,9 @@ public class AcessoEmMemoria {
 			List<String[]> gravacao = csvReader.readAll();
 			for (String[] linhaGravada : gravacao){
 				for (String printLinha : linhaGravada ){
-					System.out.println(printLinha);
+					System.out.printf(printLinha+" " );
 				}
+				System.out.println();
 			}
 		}catch (IOException e){
 		System.out.println("Database específicado não existe!");

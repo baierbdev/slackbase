@@ -12,8 +12,16 @@ public class App {
 		sistemaOperacional.setaSistemaConfig();
 		try{
 			Scanner scanner = new Scanner(System.in);
+			String system = System.getProperty("os.name"); // Obtém o sistema operacional
+			String version = "1.0.0";
+			String authors = "Lucas Terêncio, Pedro Guilherme, Bruno Baier";
+
+			System.out.println("SlackBase DB  Ver " + version + " (" + system + ")\n");
+			System.out.println("Copyright (c) 2024, " + authors + ". All rights reserved.\n");
+			System.out.println("SlackBase é um sistema de gerenciamento de banco de dados feito utilizando arquivos CSV.\n");
+			System.out.println("Digite \"help\" para conseguir ajuda ou manual para consultar o manual online.\n");
 			while( true ) {
-				System.out.print("> ");
+				System.out.print("SlackBase> ");
 				String entrada = scanner.nextLine();
 				if (entrada.equals("exit")) {
 					System.out.println("Bye!! ");

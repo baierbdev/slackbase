@@ -98,15 +98,16 @@ public class AnalisadorLexico {
 	public void funcaoInfo(){
 		System.out.println("****** Informações sobre o sistema de gerenciamento de banco de dados ******\n\n" +
 				"Versão 1.0\n" +
-				"O projeto teve como estrutura significativa o conceito de arrays e listas. Nesse sentido\n, " +
-				"foi idealizado um projeto de banco de dados, onde fosse possível realizar as operações mais\n " +
+				"O projeto teve como estrutura significativa o conceito de arrays e listas. Nesse sentido,\n" +
+				"foi idealizado um projeto de banco de dados, onde fosse possível realizar as operações mais\n" +
 				"básicas de salvamento, criação, edição e remoção de conteúdo.\n\n" +
-				"Tal forma se deu a partir da utilização de arquivos CSV, os mesmos " +
-				"utilizados por padrão no Microsoft Excel. A estrutura de um arquivo \n" +
+				"Tal forma se deu a partir da utilização de arquivos CSV, os mesmos" +
+				"utilizados por padrão no Microsoft Excel. A estrutura de um arquivo\n" +
 				"CSV segue um padrão bastante simples, onde os dados estão dispostos em texto puro, separados por vírgulas.\n\n" +
 				"Dessa forma, a aplicação trabalha diretamente com a manipulação desses" +
 				" dados, realizando inserções em um arquivo com um cabeçalho estabelecido\n" +
-				"para emular o funcionamento de um banco de dados.");
+				"para emular o funcionamento de um banco de dados.\n" +
+				"Digite help para vê os comandos básicos.");
 	}
 
 	public void funcaoHelp(String comando){
